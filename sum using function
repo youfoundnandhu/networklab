@@ -1,0 +1,18 @@
+function sum_of_digits {
+local number=$1
+local sum=0
+while (( number > 0 )); do
+sum=$(( sum + number % 10 ))
+number=$(( number / 10 ))
+done
+echo "$sum"
+}
+echo "Enter a number:"
+read number
+result=$(sum_of_digits $number)
+echo "Sum of digits of $number: $result"
+
+output
+
+Sum of numbers between 50 and 100, which are divisible by 3 and not divisible by 5:
+1050
